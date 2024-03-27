@@ -99,40 +99,32 @@ const displayResults = (data) => {
     button.addEventListener("click", addToWishList);
   });
 
-  function addToWishList(event) {
+ function addToWishList(event) {
     const clickedButton = event.target;
-    const parentDiv = clickedButton.parentElement;
-    const imageSrc = parentDiv.querySelector(".slider-img").src;
-    const imageAlt = parentDiv.querySelector(".slider-img").alt;
-
-    // Check if the item is already in the wishlist
-    const itemId = imageSrc + imageAlt;
-    const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
-    if (wishlistItems.includes(itemId)) {
-      console.log("Item already in wishlist");
-      return;
-    }
-
-    // Add the item ID to the wishlist
-    wishlistItems.push(itemId);
-    localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
-
-    // Remove the clicked item from the similar section
-    const similarSlide = parentDiv.closest(".splide__slide");
-    similarSlide.remove();
-
-    // Add the clicked item to the wishlist
-    const slide = document.createElement("li");
-    slide.className = "splide__slide";
-    slide.innerHTML = `
-      <div>
-        <img src="${imageSrc}" alt="${imageAlt}" class="slider-img">
-      </div>`;
-
-    const favSlideWrapper = document.getElementById("slideWrapper2");
-    favSlideWrapper.appendChild(slide);
-  }
-
+      const parentDiv = clickedButton.parentElement;
+      const imageSrc = parentDiv.querySelector(".slider-img").src;
+      const imageAlt = parentDiv.querySelector(".slider-img").alt;
+  
+      // Check if the item is already in the wishlist
+      const itemId = imageSrc + "|" + imageAlt;
+      const wishlistItems = JSON.parse(localStorage.getItem("wishlist")) || [];
+      if (wishlistItems.includes(itemId)) {
+          console.log("Item already in wishlist");
+          return;
+      }
+  
+      // Add the item ID to the wishlist
+      wishlistItems.push(itemId);
+      localStorage.setItem("wishlist", JSON.stringify(wishlistItems));
+  
+      // Remove the clicked item from the similar section
+      const similarSlide = parentDiv.closest(".splide__slide");
+      similarSlide.remove();
+  
+      // Render the updated wishlist immediately
+      renderWishlist();
+  
+}
   // Initialize Splide for the slider-for similar section
   new Splide("#splide", {
     type: "carousel",
