@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/@splidejs/splide@3.0.7/dist/css/splide.min.css" />
+
+</head>
+
+<body>
+    <div>
+        <!-- Header Section -->
+        <header>
+            <div class="top-header">
+                <p>SUPER SALE UPTO 40% OFF</p>
+            </div>
+            <div class="navbar">
+                <!-- Navbar for big screens -->
+                <nav>
+                    <ul>
+                        <li><a href="#">SHOP</a></li>
+                        <li><a href="#">COMMUNITY</a></li>
+                    </ul>
+                    <ul>
+                        <img src="./assets/LOGO.png" />
+                    </ul>
+                    <ul>
+                        <img src="./assets/Frame (1).png" alt="icon-1" />
+                        <img src="./assets/Frame (2).png" alt="icon-2" />
+                        <img src="./assets/Frame.png" alt="icon-3" />
+                    </ul>
+                </nav>
+                <!-- hamburger menu -->
+                <ul class="menu">
+
+                    <li><a class="menuItem" href="#">SHOP</a></li>
+                    <li><a class="menuItem" href="#">COMMUNITY</a></li>
+                    <li>
+                        <img src="./assets/Frame (1).png" alt="icon-1" />
+                        <img src="./assets/Frame (2).png" alt="icon-2" />
+                        <img src="./assets/Frame.png" alt="icon-3" />
+                    </li>
+                </ul>
+                <img src="./assets/LOGO.png" class="small-screen-logo" />
+                <button class="hamburger">
+                    <img src="./assets/burger-menu-svgrepo-com.svg" class="menuIcon" />
+                    <img src="./assets/close-1511-svgrepo-com.svg" class="closeIcon" />
+
+                </button>
+            </div>
+        </header>
+
+        <!-- Hero Section -->
+        <section class="hero-section">
+            <img src="./assets/Poster.png" />
+            <div class="overlay"></div>
+            <div class="text-div">
+                <h1>Stock photos</h1>
+                <p>John Wick is on the run after killing a member of the international assassins' guild, and with a $14
+                    million price tag on his head, he is the target of hit men and women everywhere.</p>
+                <button>
+                    <img src="./assets/Play.png" />
+                    <p>EXPLORE</p>
+                </button>
+            </div>
+        </section>
+
+        <!-- Search Section -->
+        <main class="container">
+            <h1>Image Search</h1>
+
+            <form id="search-form" class="search-form">
+                <input type="search" id="query" placeholder="Search images" />
+                <button type="submit">
+                    <span class="material-symbols-outlined"> search </span>
+                </button>
+            </form>
+
+            <div id="result" class="grid"></div>
+        </main>
+
+        <h1 id="similar-header" >Similar Section</h1>
+
+        <!-- similar section -->
+        <section id="similar-section">
+           
+            <div class="slider">
+                <div class="splide" id="splide">
+                    <div class="splide__track">
+                        <ul class="splide__list" id="slideWrapper"></ul>
+                    </div>
+                </div>
+        </section>
+
+        <h1 id="wishlist-header" >Wish List Section</h1>
+        <section id="favourite-section">
+           
+            <div class="slider">
+                <div class="splide" id="splide2" >
+                    <div class="splide__track">
+                        <ul class="splide__list" id="slideWrapper2"></ul>
+                    </div>
+                </div>
+        </section>
+    </div>
+
+    <script src="https://unpkg.com/@splidejs/splide@3.0.7/dist/js/splide.min.js"></script>
+    <script src="./script.js"></script>
+</body>
+
+</html>
